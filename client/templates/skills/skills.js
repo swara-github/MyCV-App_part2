@@ -1,9 +1,21 @@
 Template.skills.helpers({
-    skillsData: function()
-    {
-        let skillsData = Resume.findOne({firstName:"Swaranjali"});
-        return skillsData && skillsData.skills;
+
+    skillsData: function(){
+        let skillsData = Session.get('resumeData')
+        if(skillsData){
+    
+            return skillsData && skillsData.skills;
+    
+        }
     }
+        
+    });
+    
+    
+
+        /* let skillsData = Resume.findOne({firstName:"Swaranjali"});
+        return skillsData && skillsData.skills; */
+
 /*     [{
             text: "Mobile-First, Responsive Design"
         },
@@ -20,5 +32,3 @@ Template.skills.helpers({
 
     ] */
 
-
-});

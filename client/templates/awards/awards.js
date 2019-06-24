@@ -1,9 +1,13 @@
 Template.awards.helpers({
     awardlist: 
     function() { 
-        let awardData = Resume.findOne({firstName: "Swaranjali"});
-  
-        return awardData && awardData.awards;
+        //let awardData = Resume.findOne({firstName: "Swaranjali"});
+        let awardData = Session.get('resumeData')
+        if(awardData){
+
+            return awardData && awardData.awards;
+
+        }
     }
 
 //        const a = [

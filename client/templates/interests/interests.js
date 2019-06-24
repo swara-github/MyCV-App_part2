@@ -1,10 +1,20 @@
 Template.interests.helpers({
 
   interestData: function(){
-    let interestData = Resume.findOne({
+
+    let interestData = Session.get('resumeData')
+    if(interestData){
+
+        return interestData && interestData.interests;
+
+    }
+
+
+
+   /*  let interestData = Resume.findOne({
       firstName: 'Swaranjali'
     });
-  return interestData && interestData.interests;
+  return interestData && interestData.interests; */
     
   }
   /* [{

@@ -1,0 +1,114 @@
+<template name="newUser" >
+    <div class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="newUser">
+                    <div class="w-100">
+                        <div class="modal-header">
+                                <h4 class="modal-title">Fill the Details below</h4>
+
+                            
+                                        <button type="button" class="close" data-dismiss="modal">
+                                            <span aria-hidden="true">&times;</span>
+                                            <span class="sr-only">Close</span>
+                                        </button>
+                                 
+                        </div>
+                        <div class="modal-body">
+
+                            {{#autoForm id=getFormID schema="resumeSchema" type=getMethodType doc=updateDoc meteormethod="insertUpdateUserMethod" }}
+                            <div class="row">
+                                <div class="col-6">
+                                
+                                    {{> afQuickField name="firstName"}}
+
+                                </div>
+
+                                <div class="col-6">
+                                    {{> afQuickField name="lastName"}}
+
+                                </div>
+
+
+                            </div>
+
+                            <br><hr>
+
+                            <div class="row">
+                                <div class="col">
+                                    {{> afQuickField name="email"}}
+                                    
+                                    <br><hr>
+                                    <div class="row" >
+                                            <div class="col-6">
+                                                <label>Upload Profile Pic</label> <label>(Only Jpg format*)</label>
+                                                {{> afFieldInput type="file" id= "importImage"}}
+                                               
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Upload Resume</label> <label>(Only Docx format*)</label>
+                                                {{> afFieldInput type="file" id= "importResume"}}
+                                      
+                                            </div>
+                                     </div>
+                                    
+                                    <br><br>
+                                    <hr>
+                                    
+                                    {{> afQuickField name="aboutMe" rows=10}}
+                                    {{> afQuickField name="experience" fields="experience.$.post,experience.$.company,experience.$.project,experience.$.role,experience.$.duration.from,experience.$.duration.till"}}
+                                    
+                                      
+                                    {{> afQuickField name="education"  fields="education.$.clg,education.$.degree,education.$.gpa,education.$.year"}}
+                                    {{> afQuickField name="skills"}}
+                                    {{> afQuickField name="interests"}}
+                                    {{> afQuickField name="awards" fields="awards.$.name,awards.$.year,awards.$.place"}}
+                                   
+                                   <!--hidden fields-->
+                                    {{> afQuickField name = "imageDataSrc"}}
+                                    {{> afQuickField name = "resumeDataSrc"}}
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" id="submitNewResume" >Submit</button>
+                                </div>
+
+                            {{/autoForm}}
+                        </div>
+
+
+                       
+
+                </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</template>
+
+<!-- <template name="exampleModal">
+        <div class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modal example</h4>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <p>A modal example.</p>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </template> -->

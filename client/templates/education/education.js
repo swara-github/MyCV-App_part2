@@ -1,19 +1,32 @@
 Template.education.helpers({
 
     educationData: function () {
-        
+
+        let educationData = Session.get('resumeData')
+        if(educationData){
+
+            return educationData && educationData.education;
+
+        }
+        /* else{
+
+            return Resume.findOne({
+                firstName: 'Swaranjali'
+            }).education;
+            
+        } */
         
         // this is returning a hard coded value.
         // we now have all this data in the db
         // so we will now write a find query here
         // and return the result of that query.
         
-        let educationData = Resume.findOne({firstName: "Swaranjali"});;
+        /* let educationData = Resume.findOne({firstName: "Swaranjali"});;
         // console.log('Porifle from resume collection: ', myProfileData)
 
         return educationData && educationData.education;
 
-        
+         */
         
 
         /*return (

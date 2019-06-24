@@ -17,3 +17,11 @@ es5-shim@4.8.0                # ECMAScript 5 compatibility for older browsers
 ecmascript@0.12.4              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.4.0            # Server-side component of the `meteor shell` command
 
+peppelg:bootstrap-3-modal
+check
+klaseskilson:black-box
+aldeed:autoform@5.8.1
+aldeed:simple-schema@1.5.4
+email
+session
+vazco:universe-selectize

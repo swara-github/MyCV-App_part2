@@ -25,3 +25,27 @@ Template.navbar.events({
     
       },
 });
+
+
+Template.navbar.helpers({
+  nameAndEmail: function(){
+    
+    if(Session.get('resumeData')){
+        return {
+            firstName: Session.get('resumeData').firstName,
+            lastName: Session.get('resumeData').lastName
+            //email: Session.get('resumeData').email
+        }
+    }
+  },
+
+    imgSrc:function(){
+      let resumeData = Session.get('resumeData')
+    if(resumeData){ 
+
+      return resumeData.imageDataSrc || 'images/profile.jpg'
+        
+    } 
+  } 
+});
+

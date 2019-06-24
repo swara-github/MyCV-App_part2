@@ -4,23 +4,26 @@
 
      
         <div class="w-100">
-            <h1 class="mb-0">Swaranjali
-                <span class="text-primary">Panhalkar</span>
+            <h1 class="mb-0">{{nameAndEmail.firstName}}
+                <span class="text-primary">{{nameAndEmail.lastName}}</span>
             </h1>
             <div class="subheading mb-5">
                 <div class="row">
                     <div class="col-6">
-                        <a href="mailto:swaranjalipanhalkar@gmail.com">Swaranjalipanhalkar@gmail.com</a>
+                        <a href="mailto:{{nameAndEmail.email}}">{{nameAndEmail.email}}</a>
                     </div>
                     <div class="col-6">
-                        <a href="/resources/my-cv.docx">Get CV</a>
+                        <a href="{{CV.href}}" download="{{nameAndEmail.firstName}}_{{nameAndEmail.lastName}}.doc" id="cvDownloadLink" >{{CV.linkName}}</a>
 
                     </div>
                 </div>
             </div>
 
             <!--Description-->
-            <p>{{aboutMeData.text}}</p>
+            <div id="aboutMeDiv">
+                    {{aboutMeData}}
+            </div>
+            
 
 
 
@@ -29,10 +32,10 @@
 
             </p>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/swaranjali-p-342173175">
+                <a href="#">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com/swara-github?tab=repositories">
+                <a href="#">
                     <i class="fab fa-github"></i>
                 </a>
                 <a href="#">

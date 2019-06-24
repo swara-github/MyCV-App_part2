@@ -6,11 +6,21 @@
 Template.experience.helpers({
 
     experienceData:function(){
+
+
+        let experienceData = Session.get('resumeData')
+        if(experienceData){
+
+            return experienceData && experienceData.experience;
+
+        }
+
+
     //let exp = Resume.findOne({firstName: "Swaranjali"});
-    let experienceData = Resume.findOne({firstName: "Swaranjali"});
+   /*  let experienceData = Resume.findOne({firstName: "Swaranjali"});
         // console.log('Porifle from resume collection: ', myProfileData)
 
-    return experienceData && experienceData.experience;
+    return experienceData && experienceData.experience; */
 
   // return exp && exp.experience;
 
@@ -36,7 +46,7 @@ Template.experience.helpers({
         {
             post: "Web Design Intern",
             company: "Shout! Media Productions",
-            role: "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.",
+            role: "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C newUser after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.",
             duration:"September 2008 - June 2010"
         }
       
